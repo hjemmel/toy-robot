@@ -23,8 +23,13 @@ jobs:
           key: v1-dependencies-{{ checksum "yarn.lock" }}
 
       - run: yarn test
+        environment:
+          JEST_JUNIT_OUTPUT_DIR: "test-reports/test-results.xml"
       - run: yarn lint
       - run: yarn test:coverage
 
       - store_artifacts:
           path: ~/repo/coverage
+
+      - store_test_results:
+          path: ~/test-reports

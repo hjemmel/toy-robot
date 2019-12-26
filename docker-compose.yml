@@ -6,9 +6,7 @@ services:
       context: .
     ports:
       - 3000:3000
-    command: yarn start
-    volumes:
-      - ".:/app"
+    command: yarn start --host 0.0.0.0
   test:
     build:
       context: .

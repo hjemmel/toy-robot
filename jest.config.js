@@ -20,7 +20,17 @@ module.exports = {
         color: "green"
     },
     reporters: [
-        "default"
+        "default",
+        [
+            "jest-junit",
+            {
+                suiteName: "Toy Robot Tests",
+                usePathForSuiteName: true,
+                classNameTemplate: "{classname}",
+                titleTemplate: "{classname} > {title}",
+                includeConsoleOutput: true
+            }
+        ],
     ],
     collectCoverageFrom: [
         "src/**/*.{ts,tsx}",
