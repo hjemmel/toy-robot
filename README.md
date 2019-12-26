@@ -1,4 +1,4 @@
-# User hierarchy application
+# [Toy Robot application](https://toy-robot.now.sh/)
 
 [![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/hjemmel/toy-robot)
 [![CircleCI](https://circleci.com/gh/hjemmel/toy-robot.svg?style=svg)](https://circleci.com/gh/hjemmel/toy-robot)
