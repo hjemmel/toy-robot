@@ -22,9 +22,11 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
 
-      - run: yarn test
-        environment:
-          JEST_JUNIT_OUTPUT_DIR: "test-reports/test-results.xml"
+      - run:
+          name: Run tests
+          command: yarn test --ci --runInBand
+          environment:
+            JEST_JUNIT_OUTPUT_DIR: "test-reports/test-results.xml"
       - run: yarn lint
       - run: yarn test:coverage
 
