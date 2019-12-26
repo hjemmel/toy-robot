@@ -1,7 +1,7 @@
 {
   "name": "toy-robot",
   "engines": {
-    "node": "12.x"
+    "node": "10.x"
   },
   "builds": [{
     "src": "package.json",
