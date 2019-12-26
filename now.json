@@ -1,8 +1,5 @@
 {
   "name": "toy-robot",
-  "engines": {
-    "node": "10.x"
-  },
   "builds": [{
     "src": "package.json",
     "use": "@now/static-build",
