@@ -24,6 +24,8 @@ module.exports = {
         [
             "jest-junit",
             {
+                outputDirectory: "test-report",
+                outputName: "result.xml",
                 suiteName: "Toy Robot Tests",
                 usePathForSuiteName: true,
                 classNameTemplate: "{classname}",
