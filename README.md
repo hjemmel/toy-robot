@@ -25,7 +25,7 @@ Open in the browser URL: http://localhost:3000/api-docs
 
 ## CI / CD
 
-Application is built using [CircleCI](https://circleci.com/gh/hjemmel/users-hierarchy) and deployed in [ZEIT now](https://toy-robot.now.sh/) 
+Application is built using [CircleCI](https://circleci.com/gh/hjemmel/toy-robot/) and deployed in [ZEIT now](https://toy-robot.now.sh/) 
  
 
 ## Technologies / Libraries
