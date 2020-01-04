@@ -2,7 +2,7 @@ import { Commands, FACES } from "@/pages/Command/interfaces";
 import { getCommands, getRobotCoord, isOffTable } from "@/utils/utils";
 import { Robot } from "@/components/Global/interfaces";
 
-export default (command: string, robot: Robot | null) => {
+export default (command: string, robot: Robot | null, _noUsed = "a") => {
     let result = { invalid: false, message: "" };
 
     const commandParams = getCommands(command);
