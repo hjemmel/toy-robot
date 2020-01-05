@@ -1,0 +1,7 @@
+image: node:12.13.0-alpine
+tasks:
+  - init: yarn install
+    command: yarn start --host 0.0.0.0
+ports:
+  - port: 3000
+    onOpen: open-preview
