@@ -67,8 +67,10 @@
     "@atlaskit/page": "^11.0.9",
     "@atlaskit/section-message": "^4.1.2",
     "@atlaskit/textfield": "^3.1.3",
+    "butter-toast": "^3.3.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-icons": "^3.8.0",
     "styled-components": "^4.4.1",
     "styled-system": "^5.1.4"
   }
