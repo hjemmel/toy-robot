@@ -3,11 +3,9 @@ import { render, fireEvent } from "@testing-library/react";
 import GlobalState, { GlobalContext } from "@/components/Global/GlobalState";
 import Command from "@/pages/Command";
 import "@testing-library/jest-dom/extend-expect";
-import ButterToast from 'butter-toast';
-import stringMatching = jasmine.stringMatching;
+import ButterToast from "butter-toast";
 
 describe("<Command />", () => {
-
     beforeEach(() => {
         jest.spyOn(ButterToast, "raise").mockImplementation(jest.fn());
     });
@@ -17,7 +15,6 @@ describe("<Command />", () => {
     });
 
     it("Should not be empty", () => {
-
         const { getByTestId } = render(
             <GlobalState>
                 <Command />
@@ -39,8 +36,6 @@ describe("<Command />", () => {
             key: "Enter",
             keyCode: 13
         });
-        const messageInfo = getByTestId("message-info");
-
         expect(ButterToast.raise).toHaveBeenCalledTimes(1);
     });
 
