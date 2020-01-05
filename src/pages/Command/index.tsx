@@ -1,12 +1,15 @@
 import React from "react";
 import Button from "@atlaskit/button";
 import Textfield from "@atlaskit/textfield";
-import { Grid, GridColumn } from "@atlaskit/page";
+import {Grid, GridColumn} from "@atlaskit/page";
 import styled from "styled-components";
-import { GlobalContext } from "@/components/Global/GlobalState";
+import {GlobalContext} from "@/components/Global/GlobalState";
 import SectionMessage from "@atlaskit/section-message";
 import Padding from "@/components/Padding";
 import commandRuler from "@/pages/Command/commandRuler";
+import ButterToast, {Cinnamon} from 'butter-toast';
+import {GoAlert} from "react-icons/go";
+
 
 const NewButton = styled(Button)`
     margin-top: 3px;
@@ -17,7 +20,6 @@ const NewButton = styled(Button)`
 const Command = () => {
     const [command, setCommand] = React.useState("");
     const [isInvalid, setIsInvalid] = React.useState(false);
-    const [invalidMessage, setInvalidMessage] = React.useState("");
     const context = React.useContext(GlobalContext);
 
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,7 +33,12 @@ const Command = () => {
         const result = commandRuler(command, context.state.robot);
         setIsInvalid(result.invalid);
         if (result.invalid) {
-            setInvalidMessage(result.message);
+            ButterToast.raise({
+                content: <Cinnamon.Crunch scheme={Cinnamon.Crunch.SCHEME_RED}
+                                         icon={() => <p style={{fontSize: "20px"}}><GoAlert/></p>}
+                                         content={<div>{result.message}</div>}
+                                         title="Invalid Entry"/>
+            });
         } else {
             context.actions.addCommand(command);
             setCommand("");
@@ -45,6 +52,7 @@ const Command = () => {
     const onClearHandler = () => {
         context.actions.clear();
     };
+
 
     const onKeyUpHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.which === 13 || e.keyCode === 13) {
@@ -81,21 +89,17 @@ const Command = () => {
                     </NewButton>
                 </GridColumn>
                 <GridColumn medium={12}>
-                    <br />
+                    <br/>
                     <SectionMessage
                         testId="message-info"
-                        appearance={isInvalid ? "error" : "info"}
+                        appearance="info"
                     >
                         <p>
-                            {isInvalid ? (
-                                <span>{invalidMessage}</span>
-                            ) : (
-                                <span>
-                                    Please type one of the following commands:{" "}
-                                    <b>PLACE</b>, <b>MOVE</b>, <b>LEFT</b>,{" "}
-                                    <b>RIGHT</b>, <b>REPORT</b>
-                                </span>
-                            )}
+                            <span>
+                                Please type one of the following commands:{" "}
+                                <b>PLACE</b>, <b>MOVE</b>, <b>LEFT</b>,{" "}
+                                <b>RIGHT</b>, <b>REPORT</b>
+                            </span>
                         </p>
                     </SectionMessage>
                 </GridColumn>

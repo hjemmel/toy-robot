@@ -3,9 +3,21 @@ import { render, fireEvent } from "@testing-library/react";
 import GlobalState, { GlobalContext } from "@/components/Global/GlobalState";
 import Command from "@/pages/Command";
 import "@testing-library/jest-dom/extend-expect";
+import ButterToast from 'butter-toast';
+import stringMatching = jasmine.stringMatching;
 
 describe("<Command />", () => {
+
+    beforeEach(() => {
+        jest.spyOn(ButterToast, "raise").mockImplementation(jest.fn());
+    });
+
+    afterEach(() => {
+        (ButterToast.raise as jest.Mock).mockRestore();
+    });
+
     it("Should not be empty", () => {
+
         const { getByTestId } = render(
             <GlobalState>
                 <Command />
@@ -13,8 +25,7 @@ describe("<Command />", () => {
         );
 
         fireEvent.click(getByTestId("send-btn"));
-        const messageInfo = getByTestId("message-info");
-        expect(messageInfo).toHaveStyle("background-color: #FFEBE6");
+        expect(ButterToast.raise).toHaveBeenCalledTimes(1);
     });
 
     it("Should validate on ENTER", () => {
@@ -29,10 +40,8 @@ describe("<Command />", () => {
             keyCode: 13
         });
         const messageInfo = getByTestId("message-info");
-        expect(messageInfo).toHaveTextContent(
-            "Please provide a command to continue"
-        );
-        expect(messageInfo).toHaveStyle("background-color: #FFEBE6");
+
+        expect(ButterToast.raise).toHaveBeenCalledTimes(1);
     });
 
     it("Should send a valid command", () => {
