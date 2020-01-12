@@ -1,4 +1,5 @@
 import commandRuler from "@/pages/Command/commandRuler";
+import { Obj } from "@/components/Global/interfaces";
 
 describe("Command Ruler", () => {
     describe("General commands", () => {
@@ -14,6 +15,17 @@ describe("Command Ruler", () => {
             expect(result).toStrictEqual({
                 invalid: true,
                 message: "Invalid command, please input a valid command"
+            });
+        });
+    });
+
+    describe("PLACE_OBJ", () => {
+        it("Should have 2 parameters", () => {
+            const result = commandRuler("PLACE_OBJ A", null);
+
+            expect(result).toStrictEqual({
+                invalid: true,
+                message: "PLACE_OBJ requires: Y, X"
             });
         });
     });
@@ -128,6 +140,22 @@ describe("Command Ruler", () => {
         expect(result).toStrictEqual({
             invalid: false,
             message: ""
+        });
+    });
+
+    it("Should no overlapping obj", () => {
+        const position = { x: 3, y: 3 };
+        const positionObj = { x: 3, y: 4 };
+
+        const result = commandRuler(
+            "MOVE",
+            { position, face: "NORTH" },
+            { position: positionObj }
+        );
+        expect(result).toStrictEqual({
+            invalid: true,
+            message:
+                "You can't move your robot, position is overlaping the obj, please turn it or place it again"
         });
     });
 

@@ -3,6 +3,7 @@ import { ActionMap } from "./GlobalState";
 export interface MainState {
     commands: string[];
     robot: Robot | null;
+    obj: Obj | null;
 }
 
 export interface ContextProps {
@@ -17,6 +18,10 @@ export interface Position {
 
 export type FACE = "NORTH" | "SOUTH" | "EAST" | "WEST";
 
+export interface Obj {
+    position: Position;
+}
+
 export interface Robot {
     position: Position;
     face: FACE;
@@ -29,5 +34,6 @@ export interface Actions {
 
 export const initialData: MainState = {
     commands: [],
-    robot: null
+    robot: null,
+    obj: null
 };

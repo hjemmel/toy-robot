@@ -10,6 +10,7 @@ export const actions: ActionMap<MainState, Actions> = {
         const commandSplit = getCommands(command);
 
         let robot = state.robot;
+        let obj = state.obj;
         let position = { x: 0, y: 0 };
         let face: FACE = "NORTH";
 
@@ -24,6 +25,15 @@ export const actions: ActionMap<MainState, Actions> = {
 
                 //place resets the robot
                 robot = { position, face };
+                break;
+            case "PLACE_OBJ":
+                position = {
+                    x: parseInt(commandSplit[1]),
+                    y: parseInt(commandSplit[2])
+                };
+
+                //place resets the robot
+                obj = { position };
                 break;
             case "MOVE":
                 if (robot) robot.position = { ...getRobotCoord(robot) };
@@ -43,7 +53,7 @@ export const actions: ActionMap<MainState, Actions> = {
 
         commands.push(command);
 
-        return { ...state, commands, robot };
+        return { ...state, commands, robot, obj };
     },
     clear: () => (state: MainState) => {
         const commands: string[] = [];

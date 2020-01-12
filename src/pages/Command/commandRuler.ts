@@ -1,8 +1,12 @@
 import { Commands, FACES } from "@/pages/Command/interfaces";
 import { getCommands, getRobotCoord, isOffTable } from "@/utils/utils";
-import { Robot } from "@/components/Global/interfaces";
+import { Obj, Robot } from "@/components/Global/interfaces";
 
-export default (command: string, robot: Robot | null, _noUsed = "a") => {
+export default (
+    command: string,
+    robot: Robot | null,
+    obj: Obj | null = null
+) => {
     let result = { invalid: false, message: "" };
 
     const commandParams = getCommands(command);
@@ -20,6 +24,14 @@ export default (command: string, robot: Robot | null, _noUsed = "a") => {
             invalid: true,
             message: "Invalid command, please input a valid command"
         };
+    } else if (command === "PLACE_OBJ") {
+        if (commandParams.length < 3) {
+            result = {
+                ...result,
+                invalid: true,
+                message: "PLACE_OBJ requires: Y, X"
+            };
+        }
     } else if (command === "PLACE") {
         if (commandParams.length < 4) {
             result = {
@@ -61,9 +73,18 @@ export default (command: string, robot: Robot | null, _noUsed = "a") => {
                 message: "You should place your robot somewhere first"
             };
         } else if (command === "MOVE") {
-            const coord = getRobotCoord(robot);
+            const coords = getRobotCoord(robot);
 
-            if (isOffTable(coord.x, coord.y)) {
+            if (obj?.position.y === coords.y && obj?.position.x === coords.x) {
+                result = {
+                    ...result,
+                    invalid: true,
+                    message:
+                        "You can't move your robot, position is overlapping the object, please turn it or place it again"
+                };
+            }
+
+            if (isOffTable(coords.x, coords.y)) {
                 result = {
                     ...result,
                     invalid: true,

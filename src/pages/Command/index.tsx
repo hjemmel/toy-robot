@@ -29,7 +29,11 @@ const Command = () => {
     };
 
     const validateAndSetCommand = () => {
-        const result = commandRuler(command, context.state.robot);
+        const result = commandRuler(
+            command,
+            context.state.robot,
+            context.state.obj
+        );
         setIsInvalid(result.invalid);
         if (result.invalid) {
             ButterToast.raise({
