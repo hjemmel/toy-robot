@@ -155,7 +155,7 @@ describe("Command Ruler", () => {
         expect(result).toStrictEqual({
             invalid: true,
             message:
-                "You can't move your robot, position is overlaping the obj, please turn it or place it again"
+                "You can't move your robot, position is overlapping the object, please turn it or place it again"
         });
     });
 
