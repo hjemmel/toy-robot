@@ -29,6 +29,6 @@ describe("<CommandList/>", () => {
         );
 
         const commandList = getByTestId("commands-list");
-        expect(commandList).toHaveTextContent("");
+        expect(commandList).toHaveTextContent("Commands");
     });
 });

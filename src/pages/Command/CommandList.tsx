@@ -20,7 +20,11 @@ const CommandList = () => {
     };
 
     return (
-        <SectionMessage testId="commands-list" appearance="confirmation">
+        <SectionMessage
+            testId="commands-list"
+            appearance="confirmation"
+            title="Commands"
+        >
             {renderCommands()}
         </SectionMessage>
     );

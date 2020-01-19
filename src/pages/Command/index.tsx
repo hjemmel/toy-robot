@@ -1,18 +1,16 @@
 import React from "react";
 import Button from "@atlaskit/button";
 import Textfield from "@atlaskit/textfield";
-import { Grid, GridColumn } from "@atlaskit/page";
 import styled from "styled-components";
 import { GlobalContext } from "@/components/Global/GlobalState";
 import SectionMessage from "@atlaskit/section-message";
-import Padding from "@/components/Padding";
 import commandRuler from "@/pages/Command/commandRuler";
 import ButterToast, { Cinnamon } from "butter-toast";
 import { GoAlert } from "react-icons/go";
+import { Box, Flex } from "rebass";
 
 const NewButton = styled(Button)`
-    margin-top: 3px;
-    margin-right: 10px;
+    margin-top: 4px;
     display: inline-block;
 `;
 
@@ -71,47 +69,52 @@ const Command = () => {
     };
 
     return (
-        <Padding>
-            <Grid layout={"fluid"}>
-                <GridColumn medium={10}>
-                    <Textfield
-                        isInvalid={isInvalid}
-                        value={command}
-                        testId="command-text"
-                        onKeyUp={onKeyUpHandler}
-                        onChange={onChangeHandler}
-                    />
-                </GridColumn>
-                <GridColumn medium={2}>
-                    <NewButton
-                        testId="send-btn"
-                        appearance="primary"
-                        onClick={onClickHandler}
-                    >
-                        Send
-                    </NewButton>
-                    <NewButton
-                        testId="clear-btn"
-                        appearance="danger"
-                        onClick={onClearHandler}
-                    >
-                        Clear
-                    </NewButton>
-                </GridColumn>
-                <GridColumn medium={12}>
-                    <br />
-                    <SectionMessage testId="message-info" appearance="info">
-                        <p>
-                            <span>
-                                Please type one of the following commands:{" "}
-                                <b>PLACE</b>, <b>MOVE</b>, <b>LEFT</b>,{" "}
-                                <b>RIGHT</b>, <b>REPORT</b>
-                            </span>
-                        </p>
-                    </SectionMessage>
-                </GridColumn>
-            </Grid>
-        </Padding>
+        <Flex flexWrap="wrap">
+            <Box px={2} py={2} width={11.2 / 12}>
+                <Textfield
+                    isInvalid={isInvalid}
+                    value={command}
+                    testId="command-text"
+                    onKeyUp={onKeyUpHandler}
+                    onChange={onChangeHandler}
+                />
+            </Box>
+            <Box
+                py={2}
+                width={0.8 / 12}
+                sx={{
+                    display: "flex",
+                    justifyContent: "space-between"
+                }}
+            >
+                <NewButton
+                    testId="send-btn"
+                    appearance="primary"
+                    onClick={onClickHandler}
+                >
+                    Send
+                </NewButton>
+                <NewButton
+                    testId="clear-btn"
+                    appearance="danger"
+                    onClick={onClearHandler}
+                >
+                    Clear
+                </NewButton>
+            </Box>
+            <Box width={1}>
+                <br />
+                <SectionMessage testId="message-info" appearance="info">
+                    <p>
+                        <span>
+                            Please type one of the following commands:{" "}
+                            <b>PLACE</b>, <b>MOVE</b>, <b>LEFT</b>, <b>RIGHT</b>
+                            , <b>REPORT</b>
+                        </span>
+                    </p>
+                </SectionMessage>
+            </Box>
+        </Flex>
     );
 };
 
