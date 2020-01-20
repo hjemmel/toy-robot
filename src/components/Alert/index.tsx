@@ -19,6 +19,19 @@ const handleColorType = (type: string) => {
     }
 };
 
+const getTitleCss = (title?: string) => {
+    if (title !== undefined) {
+        return css`
+            & > span:nth-of-type(1) {
+                display: block;
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+        `;
+    }
+};
+
 const Div = styled.div<Props>`
     border: 1px solid;
     ${({ type }) => handleColorType(type != null ? type : "info")}
@@ -27,26 +40,7 @@ const Div = styled.div<Props>`
     color: rgba(0, 0, 0, 0.85);
     font-size: 14px;
 
-    ${({ title }) =>
-        title
-            ? css`
-                  & > span:nth-of-type(1) {
-                      display: block;
-                      font-size: 16px;
-                      font-weight: 500;
-                      margin-bottom: 5px;
-                  }
-              `
-            : ""}
-
-                  & > span:nth-of-type(1) {
-                      display: block;
-                      font-size: 16px;
-                      font-weight: 500;
-                      margin-bottom: 5px;
-                  }
-              `
-            : ""};
+    ${({ title }) => getTitleCss(title)}
 `;
 
 const Alert: FunctionComponent<Props> = (props) => {

@@ -1,5 +1,4 @@
 import commandRuler from "@/pages/Command/commandRuler";
-import { Obj } from "@/components/Global/interfaces";
 
 describe("Command Ruler", () => {
     describe("General commands", () => {
