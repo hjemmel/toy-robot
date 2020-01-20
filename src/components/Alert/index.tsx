@@ -59,6 +59,4 @@ const Alert: FunctionComponent<Props> = (props) => {
     );
 };
 
-Alert.propTypes;
-
 export default Alert;
