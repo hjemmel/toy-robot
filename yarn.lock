@@ -1444,19 +1444,19 @@
     "@testing-library/dom" "^6.11.0"
     "@types/testing-library__react" "^9.1.2"
 
-"@the-unicorns/eslint-config-base@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@the-unicorns/eslint-config-base/-/eslint-config-base-1.1.0.tgz#8524912ceeadca36203c738a5f7897a72b6f1b8e"
-  integrity sha512-DpeQWhg34/KxbHgZZaE/pVUI3Rnd+NVSAYYtR+NF16WjhQ+W4orGWeqFgZReUSmG1mNfBrSF3Lo8sOb+mH2K6A==
+"@the-unicorns/eslint-config-base@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@the-unicorns/eslint-config-base/-/eslint-config-base-1.2.0.tgz#158a3fa486dbdc1e73db93889798bd5f54848375"
+  integrity sha512-wJ7+IpGT2w0Hk1Vns+agHLp6+77MsYam8PjK+OP6MdXbs7uxLVWwldS0tmstkoSuS8rSE0lBaDXZWZAMHCzDVg==
   dependencies:
     "@typescript-eslint/parser" "^2.0.0"
 
-"@the-unicorns/eslint-config-react@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@the-unicorns/eslint-config-react/-/eslint-config-react-1.1.0.tgz#edf09207c867d8cdd2cadd63e3b6698787b59899"
-  integrity sha512-QZjZjGIBIF5WsgWLEylPLmqM6VLtTiCVS8ZtH1Ws3jrazwXbUCvUoUdxKoSCd/b5nVGizbU5fCLzUZ8gDl5dZw==
+"@the-unicorns/eslint-config-react@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@the-unicorns/eslint-config-react/-/eslint-config-react-1.2.0.tgz#851d58ccebd8bec5a4de8dd43ce2be8202143176"
+  integrity sha512-zj6uRnw0GzeXSSVGtbyi86mxIZrcKMOj+tvFmLjFUIOnZk0yZfDAvGspLeI4fPiLCHgT05nkqog5JTzcxD8yPA==
   dependencies:
-    "@the-unicorns/eslint-config-base" "^1.1.0"
+    "@the-unicorns/eslint-config-base" "^1.2.0"
     eslint-config-prettier "6.9.0"
 
 "@the-unicorns/prettier-config@^1.0.2":

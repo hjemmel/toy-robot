@@ -1,16 +1,14 @@
 import React from "react";
-import SectionMessage from "@atlaskit/section-message";
 import styled from "styled-components";
 import Command from "@/pages/Command";
 import Padding from "@/components/Padding";
 import CommandList from "@/pages/Command/CommandList";
 import { Box, Flex } from "rebass";
+import Alert from "@/components/Alert";
 
 const Ul = styled.div`
     list-style: circle;
 `;
-
-const Alert = styled.div``;
 
 const Main = () => {
     return (
@@ -21,7 +19,7 @@ const Main = () => {
             </Box>
             <Box px={2} py={2} width={1 / 2}>
                 <Padding>
-                    <SectionMessage title="Instructions" appearance="change">
+                    <Alert title="Instructions" type="info">
                         <Ul>
                             <li>
                                 PLACE will put the toy robot on the table in
@@ -67,7 +65,7 @@ const Main = () => {
                                 Provide test data to exercise the application.
                             </li>
                         </Ul>
-                    </SectionMessage>
+                    </Alert>
                 </Padding>
             </Box>
             <Box px={2} py={2} width={1 / 2}>

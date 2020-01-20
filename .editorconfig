@@ -1,0 +1,8 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*.{ts,tsx}]
+charset = utf-8
+tab_width = 4

@@ -49,9 +49,7 @@ describe("<Command />", () => {
         fireEvent.change(getByTestId("command-text"), {
             target: { value: "place 1,1,NORTH" }
         });
-        const messageInfo = getByTestId("message-info");
         expect(getByTestId("command-text")).toHaveValue("PLACE 1,1,NORTH");
-        expect(messageInfo).toHaveStyle("background-color: #DEEBFF");
     });
 
     const CommandsList = () => {
@@ -76,12 +74,9 @@ describe("<Command />", () => {
         });
         fireEvent.click(getByTestId("send-btn"));
 
-        const messageInfo = getByTestId("message-info");
         expect(getByTestId("commands-list")).toHaveTextContent(
             "PLACE 1,1,NORTH"
         );
-        expect(messageInfo).toHaveStyle("background-color: #DEEBFF");
-
         fireEvent.click(getByTestId("clear-btn"));
         expect(getByTestId("commands-list")).toHaveTextContent("");
     });

@@ -3,11 +3,11 @@ import Button from "@atlaskit/button";
 import Textfield from "@atlaskit/textfield";
 import styled from "styled-components";
 import { GlobalContext } from "@/components/Global/GlobalState";
-import SectionMessage from "@atlaskit/section-message";
 import commandRuler from "@/pages/Command/commandRuler";
 import ButterToast, { Cinnamon } from "butter-toast";
 import { GoAlert } from "react-icons/go";
 import { Box, Flex } from "rebass";
+import Alert from "@/components/Alert";
 
 const NewButton = styled(Button)`
     margin-top: 4px;
@@ -70,7 +70,7 @@ const Command = () => {
 
     return (
         <Flex flexWrap="wrap">
-            <Box px={2} py={2} width={11.2 / 12}>
+            <Box py={2} width="90%">
                 <Textfield
                     isInvalid={isInvalid}
                     value={command}
@@ -80,8 +80,9 @@ const Command = () => {
                 />
             </Box>
             <Box
+                paddingLeft={2}
                 py={2}
-                width={0.8 / 12}
+                width="10%"
                 sx={{
                     display: "flex",
                     justifyContent: "space-between"
@@ -104,7 +105,7 @@ const Command = () => {
             </Box>
             <Box width={1}>
                 <br />
-                <SectionMessage testId="message-info" appearance="info">
+                <Alert type="info">
                     <p>
                         <span>
                             Please type one of the following commands:{" "}
@@ -112,7 +113,7 @@ const Command = () => {
                             , <b>REPORT</b>
                         </span>
                     </p>
-                </SectionMessage>
+                </Alert>
             </Box>
         </Flex>
     );
