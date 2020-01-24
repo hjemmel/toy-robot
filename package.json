@@ -82,7 +82,6 @@
     "dependencies": {
         "@atlaskit/button": "^13.3.5",
         "@atlaskit/inline-dialog": "^12.1.7",
-        "@atlaskit/inline-message": "^10.1.1",
         "@atlaskit/textfield": "^3.1.4",
         "butter-toast": "^3.3.5",
         "react": "^16.12.0",
