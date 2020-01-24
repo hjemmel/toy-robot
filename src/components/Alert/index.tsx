@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 type Props = {
     type?: "success" | "info" | "warning" | "error";
     title?: string;
+    testId?: string;
 };
 
 const handleColorType = (type: string) => {
@@ -45,7 +46,7 @@ const Div = styled.div<Props>`
 
 const Alert: FunctionComponent<Props> = (props) => {
     return (
-        <Div type={props.type} title={props.title}>
+        <Div type={props.type} title={props.title} data-testid={props.testId}>
             {props.title !== undefined && <span>{props.title}</span>}
 
             {props.children}

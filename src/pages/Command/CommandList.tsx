@@ -1,6 +1,6 @@
 import React from "react";
-import SectionMessage from "@atlaskit/section-message";
 import { GlobalContext } from "@/components/Global/GlobalState";
+import Alert from "@/components/Alert";
 
 const CommandList = () => {
     const context = React.useContext(GlobalContext);
@@ -20,13 +20,9 @@ const CommandList = () => {
     };
 
     return (
-        <SectionMessage
-            testId="commands-list"
-            appearance="confirmation"
-            title="Commands"
-        >
+        <Alert testId="commands-list" type="success" title="Commands">
             {renderCommands()}
-        </SectionMessage>
+        </Alert>
     );
 };
 
