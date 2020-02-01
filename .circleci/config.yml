@@ -1,35 +1,38 @@
 version: 2
 jobs:
-  build:
-    docker:
-      - image: circleci/node:erbium
+    build:
+        docker:
+            - image: circleci/node:erbium
 
-    working_directory: ~/repo
+        working_directory: ~/repo
 
-    steps:
-      - checkout
+        steps:
+            - checkout
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
-            - v1-dependencies-
+            # Download and cache dependencies
+            - restore_cache:
+                  name: Restore Yarn Package Cache
+                  keys:
+                      - yarn-packages-{{ checksum "yarn.lock" }}
 
-      - run: yarn install
+            - run:
+                  name: Install Dependencies
+                  command: yarn install --frozen-lockfile
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
+            - save_cache:
+                  name: Save Yarn Package Cache
+                  key: yarn-packages-{{ checksum "yarn.lock" }}
+                  paths:
+                      - ~/.cache/yarn
 
-      - run:
-          name: Run tests
-          command: yarn test --ci --runInBand
-      - run: yarn lint
-      - run: yarn test:coverage
+            - run:
+                  name: Run tests
+                  command: yarn test --ci --runInBand
+            - run: yarn lint
+            - run: yarn test:coverage
 
-      - store_artifacts:
-          path: ~/repo/coverage
+            - store_artifacts:
+                  path: ~/repo/coverage
 
-      - store_test_results:
-          path: ~/repo/test-report
+            - store_test_results:
+                  path: ~/repo/test-report
