@@ -2,16 +2,6 @@
 # yarn lockfile v1
 
 
-"@atlaskit/analytics-next@^6.3.3":
-  version "6.3.4"
-  resolved "https://registry.yarnpkg.com/@atlaskit/analytics-next/-/analytics-next-6.3.4.tgz#29f2b4ba16c098333564937219ec5adaf5906dd5"
-  integrity sha512-960u9w4lTtCNJibD5mBeMuFke1xO4QJhZbOfhtDfAAlZR+kTOCMJ+C43Rhuqjva/+lieTttsnIIOjJ71SXYqvg==
-  dependencies:
-    "@atlaskit/type-helpers" "^4.2.2"
-    prop-types "^15.5.10"
-    tslib "^1.9.3"
-    use-memo-one "^1.1.1"
-
 "@atlaskit/analytics-next@^6.3.5":
   version "6.3.5"
   resolved "https://registry.yarnpkg.com/@atlaskit/analytics-next/-/analytics-next-6.3.5.tgz#3a43de9d94e74773e2268fcaa40058ca6326128e"
@@ -64,23 +54,14 @@
     react-transition-group "^2.2.1"
     tslib "^1.9.3"
 
-"@atlaskit/textfield@3.1.4":
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/@atlaskit/textfield/-/textfield-3.1.4.tgz#cec0b4843472937a917a261f5abfdad385715a8e"
-  integrity sha512-3Fx6CKzRbLyBskTBLbN1dJhzVv8yU+7BuZSvFnkj8k+7UXLDKZF9LPCyHaBnZq7IwtMoFgITphnM1gps9dWi2A==
+"@atlaskit/textfield@3.1.7":
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/@atlaskit/textfield/-/textfield-3.1.7.tgz#88ba5bdd72799c94e000963a758e189cb8d8f068"
+  integrity sha512-qfZEx1OB3pXOPuu6u7jMAgIIF+Vf5G8K/PHcvJ4BVCyyJSkaw0tkcL7agQGoS0OiFymWC112LTVTJIHmEogf+Q==
   dependencies:
-    "@atlaskit/analytics-next" "^6.3.3"
-    "@atlaskit/theme" "^9.2.8"
+    "@atlaskit/analytics-next" "^6.3.5"
+    "@atlaskit/theme" "^9.5.1"
     "@emotion/core" "^10.0.9"
-    tslib "^1.9.3"
-
-"@atlaskit/theme@^9.2.8":
-  version "9.3.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/theme/-/theme-9.3.0.tgz#751e94aeae389082e970ad6197d2ffd1f15cd26f"
-  integrity sha512-NxhANtNaJJD8jozs/J4Yzx4Nvb7xzuEg2c3pB+l6nRsryroYMHoVWgBsqBOlPmP+cswMSXl9Gl/dkIzf3yQNYw==
-  dependencies:
-    exenv "^1.2.2"
-    prop-types "^15.5.10"
     tslib "^1.9.3"
 
 "@atlaskit/theme@^9.5.1":
@@ -91,11 +72,6 @@
     exenv "^1.2.2"
     prop-types "^15.5.10"
     tslib "^1.9.3"
-
-"@atlaskit/type-helpers@^4.2.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@atlaskit/type-helpers/-/type-helpers-4.2.2.tgz#fb1524ad9745e879fb051cabf3012c3a95d05407"
-  integrity sha512-dPeG5RTYRpYzdaIrpgXSvUUklTbv+ctulQAgrzPOTpMOfUNKcldty+BLMnY2wh4zOkjjr2MPhap7xJvyGvOxzQ==
 
 "@atlaskit/type-helpers@^4.2.3":
   version "4.2.3"
