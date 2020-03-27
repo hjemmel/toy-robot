@@ -32,7 +32,7 @@ class GlobalState extends Component<{ initialState?: any }, MainState> {
                         this.devTools.send(key, this.state);
                     }
                 });
-            }
+            },
         }),
         {}
     ) as any;
@@ -44,13 +44,13 @@ class GlobalState extends Component<{ initialState?: any }, MainState> {
 
         this.state = {
             ...initialData,
-            ...customInitialState
+            ...customInitialState,
         };
 
         if (withDevTools) {
             const config = {
                 name: "Store",
-                actionCreators: this.actions
+                actionCreators: this.actions,
             };
             this.devTools = (window as any).__REDUX_DEVTOOLS_EXTENSION__.connect(
                 config

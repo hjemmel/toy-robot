@@ -12,7 +12,7 @@ export const Commands = [
     "MOVE",
     "LEFT",
     "RIGHT",
-    "REPORT"
+    "REPORT",
 ];
 
 export const FACES = ["NORTH", "SOUTH", "EAST", "WEST"];

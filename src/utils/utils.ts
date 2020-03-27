@@ -9,7 +9,7 @@ export const getRobotCoord = (robot: Robot) => {
         NORTH: { x: 0, y: 1 },
         EAST: { x: 1, y: 0 },
         SOUTH: { x: 0, y: -1 },
-        WEST: { x: -1, y: 0 }
+        WEST: { x: -1, y: 0 },
     };
 
     const position = facedPosition[robot.face];
@@ -28,14 +28,14 @@ const nextLeft: NextPosition = {
     NORTH: "WEST",
     WEST: "SOUTH",
     SOUTH: "EAST",
-    EAST: "NORTH"
+    EAST: "NORTH",
 };
 
 const nextRight: NextPosition = {
     NORTH: "EAST",
     WEST: "NORTH",
     SOUTH: "WEST",
-    EAST: "SOUTH"
+    EAST: "SOUTH",
 };
 
 export const getNewFace = (face: string, dir: "LEFT" | "RIGHT") => {

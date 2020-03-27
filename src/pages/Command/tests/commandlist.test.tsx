@@ -8,7 +8,7 @@ describe("<CommandList/>", () => {
     it("Should list the commands", () => {
         const commands = {
             commands: ["PLACE 1,1,NORTH", "MOVE", "LEFT", "RIGHT"],
-            robot: null
+            robot: null,
         };
 
         const { getByTestId } = render(

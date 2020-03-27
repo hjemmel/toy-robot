@@ -16,20 +16,20 @@ export default (
         result = {
             ...result,
             invalid: true,
-            message: "Please provide a command to continue"
+            message: "Please provide a command to continue",
         };
     } else if (Commands.indexOf(command) < 0) {
         result = {
             ...result,
             invalid: true,
-            message: "Invalid command, please input a valid command"
+            message: "Invalid command, please input a valid command",
         };
     } else if (command === "PLACE_OBJ") {
         if (commandParams.length < 3) {
             result = {
                 ...result,
                 invalid: true,
-                message: "PLACE_OBJ requires: Y, X"
+                message: "PLACE_OBJ requires: Y, X",
             };
         }
     } else if (command === "PLACE") {
@@ -37,7 +37,7 @@ export default (
             result = {
                 ...result,
                 invalid: true,
-                message: "PLACE requires: Y, X and a facing"
+                message: "PLACE requires: Y, X and a facing",
             };
         } else {
             const x = parseInt(commandParams[1], 10);
@@ -47,13 +47,13 @@ export default (
                 result = {
                     ...result,
                     invalid: true,
-                    message: "Face needs to be: " + FACES.join(", ")
+                    message: "Face needs to be: " + FACES.join(", "),
                 };
             } else if (isNaN(x) || isNaN(y)) {
                 result = {
                     ...result,
                     invalid: true,
-                    message: "Please inform a valid number"
+                    message: "Please inform a valid number",
                 };
             }
             if (isOffTable(x, y)) {
@@ -61,7 +61,7 @@ export default (
                     ...result,
                     invalid: true,
                     message:
-                        "Your robot is off the table, please inform a valid position"
+                        "Your robot is off the table, please inform a valid position",
                 };
             }
         }
@@ -70,7 +70,7 @@ export default (
             result = {
                 ...result,
                 invalid: true,
-                message: "You should place your robot somewhere first"
+                message: "You should place your robot somewhere first",
             };
         } else if (command === "MOVE") {
             const coords = getRobotCoord(robot);
@@ -80,7 +80,7 @@ export default (
                     ...result,
                     invalid: true,
                     message:
-                        "You can't move your robot, position is overlapping the object, please turn it or place it again"
+                        "You can't move your robot, position is overlapping the object, please turn it or place it again",
                 };
             }
 
@@ -89,7 +89,7 @@ export default (
                     ...result,
                     invalid: true,
                     message:
-                        "You can't move your robot, position is off the table, please turn it or place it again"
+                        "You can't move your robot, position is off the table, please turn it or place it again",
                 };
             }
         }

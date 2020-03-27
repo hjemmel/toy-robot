@@ -34,7 +34,7 @@ describe("<Command />", () => {
 
         fireEvent.keyUp(getByTestId("command-text"), {
             key: "Enter",
-            keyCode: 13
+            keyCode: 13,
         });
         expect(ButterToast.raise).toHaveBeenCalledTimes(1);
     });
@@ -47,7 +47,7 @@ describe("<Command />", () => {
         );
 
         fireEvent.change(getByTestId("command-text"), {
-            target: { value: "place 1,1,NORTH" }
+            target: { value: "place 1,1,NORTH" },
         });
         expect(getByTestId("command-text")).toHaveValue("PLACE 1,1,NORTH");
     });
@@ -70,7 +70,7 @@ describe("<Command />", () => {
         );
 
         fireEvent.change(getByTestId("command-text"), {
-            target: { value: "place 1,1,NORTH" }
+            target: { value: "place 1,1,NORTH" },
         });
         fireEvent.click(getByTestId("send-btn"));
 
@@ -90,31 +90,31 @@ describe("<Command />", () => {
         );
 
         fireEvent.change(getByTestId("command-text"), {
-            target: { value: "place 1,1,NORTH" }
+            target: { value: "place 1,1,NORTH" },
         });
         fireEvent.click(getByTestId("send-btn"));
 
         fireEvent.change(getByTestId("command-text"), {
-            target: { value: "MOVE" }
+            target: { value: "MOVE" },
         });
         fireEvent.click(getByTestId("send-btn"));
 
         fireEvent.change(getByTestId("command-text"), {
-            target: { value: "LEFT" }
+            target: { value: "LEFT" },
         });
         fireEvent.click(getByTestId("send-btn"));
 
         fireEvent.change(getByTestId("command-text"), {
-            target: { value: "RIGHT" }
+            target: { value: "RIGHT" },
         });
         fireEvent.click(getByTestId("send-btn"));
 
         fireEvent.change(getByTestId("command-text"), {
-            target: { value: "REPORT" }
+            target: { value: "REPORT" },
         });
         fireEvent.keyUp(getByTestId("command-text"), {
             key: "Enter",
-            keyCode: 13
+            keyCode: 13,
         });
 
         expect(getByTestId("commands-list")).toHaveTextContent(
