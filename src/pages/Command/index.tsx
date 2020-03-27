@@ -46,7 +46,7 @@ const Command = () => {
                         content={<div>{result.message}</div>}
                         title="Invalid Entry"
                     />
-                )
+                ),
             });
         } else {
             context.actions.addCommand(command);
@@ -85,7 +85,7 @@ const Command = () => {
                 width="10%"
                 sx={{
                     display: "flex",
-                    justifyContent: "space-between"
+                    justifyContent: "space-between",
                 }}
             >
                 <NewButton

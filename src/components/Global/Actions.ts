@@ -18,7 +18,7 @@ export const actions: ActionMap<MainState, Actions> = {
             case "PLACE":
                 position = {
                     x: parseInt(commandSplit[1]),
-                    y: parseInt(commandSplit[2])
+                    y: parseInt(commandSplit[2]),
                 };
 
                 face = commandSplit[3] as FACE;
@@ -29,7 +29,7 @@ export const actions: ActionMap<MainState, Actions> = {
             case "PLACE_OBJ":
                 position = {
                     x: parseInt(commandSplit[1]),
-                    y: parseInt(commandSplit[2])
+                    y: parseInt(commandSplit[2]),
                 };
 
                 //place resets the robot
@@ -60,5 +60,5 @@ export const actions: ActionMap<MainState, Actions> = {
         const robot = null;
 
         return { ...state, commands, robot };
-    }
+    },
 };

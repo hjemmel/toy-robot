@@ -13,7 +13,7 @@ describe("Command Ruler", () => {
 
             expect(result).toStrictEqual({
                 invalid: true,
-                message: "Invalid command, please input a valid command"
+                message: "Invalid command, please input a valid command",
             });
         });
     });
@@ -24,7 +24,7 @@ describe("Command Ruler", () => {
 
             expect(result).toStrictEqual({
                 invalid: true,
-                message: "PLACE_OBJ requires: Y, X"
+                message: "PLACE_OBJ requires: Y, X",
             });
         });
     });
@@ -35,7 +35,7 @@ describe("Command Ruler", () => {
 
             expect(result).toStrictEqual({
                 invalid: true,
-                message: "PLACE requires: Y, X and a facing"
+                message: "PLACE requires: Y, X and a facing",
             });
         });
 
@@ -44,7 +44,7 @@ describe("Command Ruler", () => {
 
             expect(result).toStrictEqual({
                 invalid: true,
-                message: "Face needs to be: NORTH, SOUTH, EAST, WEST"
+                message: "Face needs to be: NORTH, SOUTH, EAST, WEST",
             });
         });
 
@@ -53,7 +53,7 @@ describe("Command Ruler", () => {
 
             expect(result).toStrictEqual({
                 invalid: true,
-                message: "Please inform a valid number"
+                message: "Please inform a valid number",
             });
         });
 
@@ -66,7 +66,7 @@ describe("Command Ruler", () => {
             const result = commandRuler(`PLACE ${a},${b},NORTH`, null);
             expect(result).toStrictEqual({
                 invalid: true,
-                message: "Please inform a valid number"
+                message: "Please inform a valid number",
             });
         });
 
@@ -76,13 +76,13 @@ describe("Command Ruler", () => {
             [6, 6],
             [-1, 1],
             [-1, -1],
-            [1, -1]
+            [1, -1],
         ])("Should %i and %i not exceed the table length", (a, b) => {
             const result = commandRuler(`PLACE ${a},${b},NORTH`, null);
             expect(result).toStrictEqual({
                 invalid: true,
                 message:
-                    "Your robot is off the table, please inform a valid position"
+                    "Your robot is off the table, please inform a valid position",
             });
         });
 
@@ -92,7 +92,7 @@ describe("Command Ruler", () => {
                 const result = commandRuler(`${command}`, null);
                 expect(result).toStrictEqual({
                     invalid: true,
-                    message: "You should place your robot somewhere first"
+                    message: "You should place your robot somewhere first",
                 });
             }
         );
@@ -118,7 +118,7 @@ describe("Command Ruler", () => {
                 expect(result).toStrictEqual({
                     invalid: true,
                     message:
-                        "You can't move your robot, position is off the table, please turn it or place it again"
+                        "You can't move your robot, position is off the table, please turn it or place it again",
                 });
             }
         );
@@ -128,7 +128,7 @@ describe("Command Ruler", () => {
         const result = commandRuler("PLACE 1,1,NORTH", null);
         expect(result).toStrictEqual({
             invalid: false,
-            message: ""
+            message: "",
         });
     });
 
@@ -138,7 +138,7 @@ describe("Command Ruler", () => {
         const result = commandRuler("MOVE", { position, face: "NORTH" });
         expect(result).toStrictEqual({
             invalid: false,
-            message: ""
+            message: "",
         });
     });
 
@@ -154,7 +154,7 @@ describe("Command Ruler", () => {
         expect(result).toStrictEqual({
             invalid: true,
             message:
-                "You can't move your robot, position is overlapping the object, please turn it or place it again"
+                "You can't move your robot, position is overlapping the object, please turn it or place it again",
         });
     });
 
@@ -164,7 +164,7 @@ describe("Command Ruler", () => {
         const result = commandRuler("REPORT", { position, face: "NORTH" });
         expect(result).toStrictEqual({
             invalid: false,
-            message: ""
+            message: "",
         });
     });
 });

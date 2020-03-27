@@ -35,5 +35,5 @@ export interface Actions {
 export const initialData: MainState = {
     commands: [],
     robot: null,
-    obj: null
+    obj: null,
 };
