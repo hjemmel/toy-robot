@@ -25,10 +25,10 @@
     memoize-one "^5.1.0"
     tslib "^1.9.3"
 
-"@atlaskit/inline-dialog@12.1.9":
-  version "12.1.9"
-  resolved "https://registry.yarnpkg.com/@atlaskit/inline-dialog/-/inline-dialog-12.1.9.tgz#0edc2f883e399ae9b3e76be6a3138173bb462ddb"
-  integrity sha512-YRqR9XMhgAbeXbbzipH0Kq80yM2pUWYo2fZrSvTCKpC2M865bsklS5FDPXEw21nSY2rAfr5QXj2Xhjqq4LWBFw==
+"@atlaskit/inline-dialog@12.1.11":
+  version "12.1.11"
+  resolved "https://registry.yarnpkg.com/@atlaskit/inline-dialog/-/inline-dialog-12.1.11.tgz#a14040b598148c3c4ed6503c9f28902e4c0ef713"
+  integrity sha512-O7kZb+so6X01RNPqgbiunRvJ5WH/UHGa5wStNY+tp1g/gpDMVJtDhcpZR8dcqFmG60KaL8w60sR7TqRzwCD03w==
   dependencies:
     "@atlaskit/analytics-next" "^6.3.5"
     "@atlaskit/popper" "^3.1.11"
